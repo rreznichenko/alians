@@ -1,0 +1,17 @@
+.header {
+  background: #5f89ce;
+} 
+
+.header h1 {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 24px;
+  display: inline-block;
+  font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+}
+
+.header h1 a{
+  color: #e6e6f7;
+  text-decoration: none;
+}
+

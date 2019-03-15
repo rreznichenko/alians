@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
-import words from './../wordsData/words.json'
+import words from './../../../../wordsData/words.json'
 
 class WordContainer extends Component {
     state = {

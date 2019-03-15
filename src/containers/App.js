@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Header from '../components/header';
-import Main from "./main/main";
-import Game from "./game/game";
-import Config from "./config/config";
-import Page404 from "./page404/page404";
+import Header from '../components/header/';
+import Main from "./main/";
+import Game from "./game/";
+import Config from "./config/";
+import Page404 from "./page404/";
 
 import './App.css';
 

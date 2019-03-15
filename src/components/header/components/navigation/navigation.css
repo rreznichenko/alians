@@ -1,0 +1,20 @@
+.navigation {
+  display: inline-block;
+  width: 80%;
+  margin: 0;
+}
+
+.navigation__li {
+  display: inline-block;
+  padding:30px 10px;
+}
+
+.navigation__li:hover {
+  background: #6286c1;
+}
+
+.navigation__li a {
+  color: #e6e6f7;
+  text-decoration: none;
+  padding: 30px 10px;
+}

@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import Navigation from './navigation'
+import {Link} from 'react-router-dom';
+import Navigation from './components/navigation/'
+import './header.css'
 
 export default class Header extends Component {
     state = {
@@ -22,7 +24,7 @@ export default class Header extends Component {
     render() {
         return ( 
             <div className="header">
-                <h1>header</h1>
+                <h1><Link to="/">Alians</Link></h1>
                 <Navigation config={this.state.navigationPaths} />
             </div>
         ) 
