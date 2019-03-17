@@ -9,7 +9,7 @@ export default class Game extends Component {
         return (<div>
             <PlayerContainer />
             <WordConainer />
-            <Timer />>
+            <Timer />
             </div>
             )
     }

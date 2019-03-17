@@ -11,11 +11,11 @@ const reducer = (state = initialState, action) => {
     console.log(action)
     if (action.type === "ADD_PLAYER") {
         const newPlayerArr = [...state.players]
-        
+
         newPlayerArr.push({
-           id:action.id,
-           name: action.name,
-           score: action.playerScore
+            id: action.id,
+            name: action.name,
+            score: action.playerScore
         })
         return {
             ...state,
@@ -23,24 +23,26 @@ const reducer = (state = initialState, action) => {
         }
     }
 
-    if(action.type === "ADD_SCORE") {
+    if (action.type === "ADD_SCORE") {
         let player = state.players.filter(player => player.id === action.id)
         const players = [...state.players];
         player = player[0];
-        player.score += 1;
-        const playerIndex = players.findIndex(currentPlayer => currentPlayer.id === action.id)
-        players[playerIndex] = player;
-        return {
-            ...state,
-            players: players
+        if (player && player.score > 0) {
+            player.score += 1;
+            const playerIndex = players.findIndex(currentPlayer => currentPlayer.id === action.id)
+            players[playerIndex] = player;
+            return {
+                ...state,
+                players: players
+            }
         }
     }
-    
-    if(action.type === "REMOVE_SCORE") {
+
+    if (action.type === "REMOVE_SCORE") {
         let player = state.players.filter(player => player.id === action.id)
         const players = [...state.players];
         player = player[0];
-        if(player.score > 0) {
+        if (player && player.score > 0) {
             player.score -= 1;
             const playerIndex = players.findIndex(currentPlayer => currentPlayer.id === action.id)
             console.log(playerIndex)
@@ -52,8 +54,8 @@ const reducer = (state = initialState, action) => {
         }
     }
 
-    if(action.type === "CHOOSE_PLAYER") {
-        let player = state.players.find(currentPlayer => currentPlayer.id === action.id) ;
+    if (action.type === "CHOOSE_PLAYER") {
+        let player = state.players.find(currentPlayer => currentPlayer.id === action.id);
         return {
             ...state,
             currentPlayer: player

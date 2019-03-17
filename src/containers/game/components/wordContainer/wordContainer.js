@@ -10,9 +10,9 @@ class WordContainer extends Component {
     }
 
     chooseWord = () => {
-        const randomIndex = parseInt(Math.random() * this.state.words.length);
+        const randomIndex = parseInt(Math.random() * this.state.words[0].data.length);
         this.setState({
-            currentWord: this.state.words[randomIndex]
+            currentWord: this.state.words[0].data[randomIndex]
         })
     }
 
@@ -21,12 +21,16 @@ class WordContainer extends Component {
     }
 
     pass = () => {
-        this.props.removeScore(this.props.currentPlayer.id);
+        if(this.props.currentPlayer.id) {
+            this.props.removeScore(this.props.currentPlayer.id);
+        }
         this.chooseWord();
     }
 
     right = () => {
-        this.props.addScore(this.props.currentPlayer.id);
+        if(this.props.currentPlayer.id) {
+            this.props.addScore(this.props.currentPlayer.id);
+        }
         this.chooseWord();
     }
 
