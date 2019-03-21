@@ -1,9 +1,17 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 
+import './config.css';
+
 class Config extends Component {
     state = {
         name: ''
+    }
+
+    addPlayer() {
+        if(this.state.name) {
+            this.props.addPlayer(this.state.name);
+        }
     }
 
     render() {
@@ -12,23 +20,24 @@ class Config extends Component {
         })
 
         return (
-            <div>
-                <p>Config</p>
-
-                <input type="text" value={this.state.name} onChange={(event) => {
-                    const stateName = {
-                        ...this.state,
-                        name: event.target.value
-                    }
-                    this.setState(stateName);
-                }} />
-                <button onClick={() => {
-                    this.props.addPlayer(this.state.name);
-                    this.setState({
-                        ...this.state,
-                        name: ''
-                    });
-                }}>Add Player</button>
+            <div className="config-screen">
+                <h1>Config</h1>
+                <div>
+                    <input type="text" value={this.state.name} onChange={(event) => {
+                        const stateName = {
+                            ...this.state,
+                            name: event.target.value
+                        }
+                        this.setState(stateName);
+                    }} />
+                    <button className="btn btn__hover" onClick={() => {
+                        this.addPlayer();
+                        this.setState({
+                            ...this.state,
+                            name: ''
+                        });
+                    }}>Add Player</button>
+                </div>
                 
                 {players}
             </div>

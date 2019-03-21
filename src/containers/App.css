@@ -1,0 +1,21 @@
+.btn {
+  background-color: #5f89ce;
+  color: #fff;
+  font-family: 'Cabin Sketch', cursive;
+  border: 0;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px 5px;
+}
+
+.btn__hover:hover {
+  background-color: #6286c1;
+  cursor:pointer;
+}
+
+.inpt {
+  border-radius: 5px;
+  border-color: #5f89ce;
+  border-style: solid;
+  height: 23px;
+}
