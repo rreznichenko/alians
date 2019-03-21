@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import actions from '../../store/actions';
 
 import PlayerContainer from './components/playerContainer/'
 import WordConainer from './components/wordContainer/';
@@ -36,13 +37,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         addScore: (id) => {
-          return  dispatch({type:"ADD_SCORE", id:id})
+          return  dispatch({type: actions.ADD_SCORE, id:id})
         },
         removeScore: (id) => {
-          return  dispatch({type: "REMOVE_SCORE", id:id})
+          return  dispatch({type: actions.REMOVE_SCORE, id:id})
         },
         choosePlayer: (id) => {
-          return  dispatch({type: "CHOOSE_PLAYER", id:id})
+          return  dispatch({type: actions.CHOOSE_PLAYER, id:id})
         }
     }
 }
