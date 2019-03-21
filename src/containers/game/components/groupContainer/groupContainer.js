@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 
 import words from './../../../../wordsData/words.json'
 
@@ -21,20 +20,8 @@ class GroupContainer extends Component {
     }
 
     render() {
-
+    return <div></div>
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(GroupContainer)
+export default GroupContainer

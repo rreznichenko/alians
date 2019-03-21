@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux'
 
 import words from './../../../../wordsData/words.json'
 
@@ -22,14 +21,14 @@ class WordContainer extends Component {
 
     pass = () => {
         if(this.props.currentPlayer.id) {
-            this.props.removeScore(this.props.currentPlayer.id);
+            this.props.onRemoveHandler(this.props.currentPlayer.id);
         }
         this.chooseWord();
     }
 
     right = () => {
         if(this.props.currentPlayer.id) {
-            this.props.addScore(this.props.currentPlayer.id);
+            this.props.onAddHandler(this.props.currentPlayer.id);
         }
         this.chooseWord();
     }
@@ -43,21 +42,5 @@ class WordContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        currentPlayer: state.currentPlayer
-    }
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addScore: (id) => {
-          return  dispatch({type:"ADD_SCORE", id:id})
-        },
-        removeScore: (id) => {
-          return  dispatch({type: "REMOVE_SCORE", id:id})
-        },
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(WordContainer)
+export default WordContainer;
