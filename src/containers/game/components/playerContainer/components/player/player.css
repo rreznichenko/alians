@@ -1,0 +1,15 @@
+.player {
+    background-color: #5f89ce;
+    width: 150px;
+    color:#FFF;
+    text-align: center;
+    margin:10px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.player_btn {
+    font-size: 42px;
+    margin: 0;
+    padding: 0 0;
+}

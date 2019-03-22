@@ -24,14 +24,14 @@ class Config extends Component {
             <div className="config-screen">
                 <h1>Config</h1>
                 <div>
-                    <input type="text" value={this.state.name} onChange={(event) => {
+                    <input className="inpt inpt__focused" type="text" value={this.state.name} onChange={(event) => {
                         const stateName = {
                             ...this.state,
                             name: event.target.value
                         }
                         this.setState(stateName);
                     }} />
-                    <button className="btn btn__hover" onClick={() => {
+                    <button className="btn btn__hover btn__focused" onClick={() => {
                         this.addPlayer();
                         this.setState({
                             ...this.state,

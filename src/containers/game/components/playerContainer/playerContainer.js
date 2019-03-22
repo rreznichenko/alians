@@ -16,7 +16,6 @@ class PlayerContainer extends Component {
         })
         return (
             <div>
-                <p>Game</p>
                 {players}
             </div>
         );

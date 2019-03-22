@@ -5,7 +5,7 @@
   border: 0;
   height: 30px;
   border-radius: 5px;
-  margin: 10px 5px;
+  margin: 0px 5px;
 }
 
 .btn__hover:hover {
@@ -13,9 +13,15 @@
   cursor:pointer;
 }
 
+.inpt__focused:focus,
+.btn__focused:focus {
+  outline-style: initial;
+  border-color: #6286c1;
+}
+
 .inpt {
   border-radius: 5px;
   border-color: #5f89ce;
   border-style: solid;
-  height: 23px;
+  height: 24px;
 }

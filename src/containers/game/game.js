@@ -10,18 +10,18 @@ import Timer from './components/timer/';
 class Game extends Component {
     render() {
         return (<div>
-            <PlayerContainer
-             players={this.props.players} 
-             onChooseHandler={this.props.choosePlayer}
-             onAddHandler={this.props.addScore} 
-             onRemoveHandler={this.props.removeScore}
-             />
-            <WordConainer
-             currentPlayer={this.props.currentPlayer}
-             onAddHandler={this.props.addScore} 
-             onRemoveHandler={this.props.removeScore}
-            />
-            <Timer />
+                  <PlayerContainer
+                  players={this.props.players} 
+                  onChooseHandler={this.props.choosePlayer}
+                  onAddHandler={this.props.addScore} 
+                  onRemoveHandler={this.props.removeScore}
+                  />
+                  <WordConainer
+                  currentPlayer={this.props.currentPlayer}
+                  onAddHandler={this.props.addScore} 
+                  onRemoveHandler={this.props.removeScore}
+                  />
+                  <Timer />
             </div>
             )
     }
