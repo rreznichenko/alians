@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import words from './../../../../wordsData/words.json'
 
+import './wordContainer.css';
+
 class WordContainer extends Component {
     state = {
         words,
@@ -35,9 +37,11 @@ class WordContainer extends Component {
 
     render() {
         return (<div>
-            {this.state.currentWord}
-            <button onClick={this.pass}>pass</button>
-            <button onClick={this.right}>right!</button>
+            <p className="word-container__word">{this.state.currentWord}</p>
+            <div className="word-container__buttons">
+                <button className="btn btn__hover" onClick={this.pass}>pass!</button>
+                <button className="btn btn__hover" onClick={this.right}>right!</button>
+            </div>
         </div>)
     }
 }

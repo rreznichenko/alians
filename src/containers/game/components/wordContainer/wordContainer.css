@@ -1,0 +1,15 @@
+.word-container__word {
+    font-size: 65px;
+    text-align: center;
+    margin:10px;
+}
+
+.word-container__buttons {
+    text-align: center;
+}
+
+.word-container__buttons button{
+    font-size: 35px;
+    height: initial;
+    padding: 5px;
+}

@@ -11,7 +11,7 @@
 .player__radio {
     vertical-align: text-top;
 }
-
+.player__name:hover,
 .player__radio:hover {
     cursor: pointer;
 }

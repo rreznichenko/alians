@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './timer.css';
+
 export default class Timer extends Component {
     state = {
         seconds: 60 
@@ -40,9 +42,9 @@ export default class Timer extends Component {
         return (
         <div className="timer">
             <p className="timer__display">{this.state.seconds}</p>
-            <button className="timer__btn" onClick={this.startTimer}>Start!</button>
-            <button className="timer__btn" onClick={this.stopTimer}>Stop!</button>
-            <button className="timer__btn" onClick={this.restartTimer}>Restart!</button>
+            <button className="timer__btn btn btn__hover" onClick={this.startTimer}>Start!</button>
+            <button className="timer__btn btn btn__hover" onClick={this.stopTimer}>Stop!</button>
+            <button className="timer__btn btn btn__hover" onClick={this.restartTimer}>Restart!</button>
         </div>)
     }
 }
