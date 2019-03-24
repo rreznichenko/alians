@@ -8,8 +8,33 @@
     border-radius: 15px;
 }
 
+.player__radio {
+    vertical-align: text-top;
+}
+
+.player__radio:hover {
+    cursor: pointer;
+}
+
+.player__name {
+    display: inline-block;
+}
+
 .player_btn {
     font-size: 42px;
     margin: 0;
     padding: 0 0;
+    display: inline;
+}
+
+.player_btn:hover {
+    cursor: pointer;
+}
+
+.player_btn:focus {
+    outline: none;
+}
+
+.player__score {
+    font-size: 32px;
 }
