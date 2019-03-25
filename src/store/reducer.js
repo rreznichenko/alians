@@ -1,11 +1,12 @@
-import actions from './actions';
+import {actions} from './actions';
 const initialState = {
     players: [{
         id: 1,
         name: "test",
         score: 0
     }],
-    currentPlayer: 0
+    currentPlayer: 0,
+    selectedGroupId: "2"
 }
 
 const reducer = (state = initialState, action) => {
@@ -60,6 +61,13 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             currentPlayer: player
+        }
+    }
+
+    if (action.type === actions.SELECT_GROUP) {
+        return {
+            ...state,
+            selectedGroupId: action.id
         }
     }
 

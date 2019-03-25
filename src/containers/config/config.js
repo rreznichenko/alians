@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
-import actions from '../../store/actions'
+import {addPlayer} from '../../store/actions'
 
 import './config.css';
 
@@ -39,7 +39,6 @@ class Config extends Component {
                         });
                     }}>Add Player</button>
                 </div>
-                
                 {players}
             </div>
         )
@@ -55,12 +54,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         addPlayer: (name) => {
-            return dispatch({
-                type: actions.ADD_PLAYER, 
-                id: new Date(), 
-                name:name, 
-                playerScore: 0
-            })
+            return dispatch(addPlayer(name))
         }
     }
 }

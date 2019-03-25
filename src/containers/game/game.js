@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import actions from '../../store/actions';
+import {addScore, removeScore, choosePlayer, selectGroup} from '../../store/actions';
 
 import PlayerContainer from './components/playerContainer/'
 import WordConainer from './components/wordContainer/';
 import Timer from './components/timer/';
+import GroupContainer from './components/groupContainer'
 
 
 class Game extends Component {
     render() {
         return (<div>
-                  <PlayerContainer
+                  {/* <PlayerContainer
                   players={this.props.players} 
                   onChooseHandler={this.props.choosePlayer}
                   onAddHandler={this.props.addScore} 
@@ -21,7 +22,11 @@ class Game extends Component {
                   onAddHandler={this.props.addScore} 
                   onRemoveHandler={this.props.removeScore}
                   />
-                  <Timer />
+                  <Timer /> */}
+                  <GroupContainer 
+                    groupId={this.props.selectedGroupId}
+                    onChangeGroup={this.props.changeGroup}
+                  />
             </div>
             )
     }
@@ -30,20 +35,24 @@ class Game extends Component {
 const mapStateToProps = state => {
     return {
         players: state.players,
-        currentPlayer: state.currentPlayer
+        currentPlayer: state.currentPlayer,
+        selectedGroupId: state.selectedGroupId
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         addScore: (id) => {
-          return  dispatch({type: actions.ADD_SCORE, id:id})
+          return  dispatch(addScore(id))
         },
         removeScore: (id) => {
-          return  dispatch({type: actions.REMOVE_SCORE, id:id})
+          return  dispatch(removeScore(id))
         },
         choosePlayer: (id) => {
-          return  dispatch({type: actions.CHOOSE_PLAYER, id:id})
+          return  dispatch(choosePlayer(id))
+        },
+        changeGroup: (id) => {
+          return  dispatch(selectGroup(id))
         }
     }
 }

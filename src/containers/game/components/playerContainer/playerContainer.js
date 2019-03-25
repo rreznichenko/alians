@@ -5,8 +5,7 @@ import Player from './components/player/';
 
 class PlayerContainer extends Component {
     render() {
-        console.log(this.props.players)
-        const players = this.props.players.map(item => {
+        const players = this.props.players.map((item, index) => {
             return <Player 
                         key={item.id} 
                         onChooseHandler={this.props.onChooseHandler} 

@@ -1,0 +1,20 @@
+.group-container {
+    width:300px;
+    margin: 10px;
+}
+
+.group-container__select {
+    border:2px solid #5f89ce;
+    width:100px;
+    font-size:14px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.group-container__img {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    vertical-align: bottom;
+    margin: 0 0 0 10px;
+}
